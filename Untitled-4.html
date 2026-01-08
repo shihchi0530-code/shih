@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>Vocaloid 聲庫介紹</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===== 入口頁 ===== */
+#landing {
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #1abc9c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.landing-box {
+  max-width: 600px;
+}
+
+.landing-box h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.landing-box p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.landing-box button {
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: white;
+  color: #2c3e50;
+}
+
+.landing-box button:hover {
+  background-color: #eee;
+}
+
+/* ===== 主網站隱藏 ===== */
+#site {
+  display: none;
+}
+
+/* ===== 導覽列 ===== */
+nav {
+  background-color: #2c3e50;
+  padding: 15px;
+  text-align: center;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  text-decoration: underline;
+}
+
+/* ===== 內容 ===== */
+main {
+  padding: 40px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 25px;
+}
+
+/* ===== 關於頁 ===== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-layout img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ===== 網格 ===== */
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+.voice-grid,
+.term-grid,
+.p-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.video-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ===== 卡片 ===== */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+}
+</style>
+
+<script>
+function enterSite() {
+  document.getElementById("landing").style.display = "none";
+  document.getElementById("site").style.display = "block";
+}
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+  });
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+</head>
+
+<body>
+<table width="100%px" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="100px"><img class="logo" src="Vocaloid_logo.png" width="375" height="45" alt=""/>&nbsp;</td>	
+
+      <td width="40%">&nbsp;<p class="name"></p></td>
+      <td>&nbsp;<div class="b1"><p class="d1"></p></div></td>
+      <td>&nbsp;<div class="b2"><p class="d2"></p></div></td>
+      <td>&nbsp;<div class="b3"><p class="d3"></p></div></td>
+    
+    </tr>
+  </tbody>
+</table>	
+<!-- ===== 入口頁 ===== -->
+<section id="landing">
+  <div class="landing-box">
+    <h1>Vocaloid 介紹</h1>
+    <p>
+      探索虛擬歌聲的世界<br>
+      聲庫・歌曲・創作者文化
+    </p>
+    <button onclick="enterSite()">進入網站</button>
+  </div>
+</section>
+
+<!-- ===== 主網站 ===== -->
+<div id="site">
+
+<nav>
+  <button onclick="showPage('about')">關於</button>
+  <button onclick="showPage('voice')">聲庫</button>
+  <button onclick="showPage('song')">歌曲</button>
+  <button onclick="showPage('term')">名詞簡介</button>
+  <button onclick="showPage('p')">P主介紹</button>
+</nav>
+
+<main>
+
+<!-- 關於 -->
+<section id="about" class="page active">
+  <h1>什麼是 Vocaloid？</h1>
+  <div class="about-layout">
+	  <img src="圖片1.jpg" > 
+    <div>
+      <p>
+        Vocaloid 是由日本 Yamaha 開發的語音合成歌唱軟體，
+        使用者可以輸入旋律與歌詞，透過聲庫角色合成歌曲。
+      </p>
+      <p>
+        其簡稱為「ボカロ（Vocalo）」，
+        並發展出龐大的創作者與粉絲文化。
+      </p>
+  </div>
+  </div>
+</section>
+
+<section id="voice" class="page">
+  <h1>聲庫介紹</h1>
+  <div class="grid voice-grid">
+
+    <div class="card"><h3>初音未來</h3></div>
+    <div class="card"><h3>鏡音鈴、連</h3></div>
+    <div class="card"><h3>巡音流歌</h3></div>
+  </div>
+</section>
+
+<section id="song" class="page">
+  <h1>代表歌曲</h1>
+  <div class="grid video-grid">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/1VXHAuG7Yg4?si=k_yyV71aqF5eAjd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Kobrtyw97kU?si=Bo5r7nxLCs_YjEZX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dBdEb4XVLqs?si=UbKMDJ6x0r5hp3Sq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="term" class="page">
+  <h1>名詞簡介</h1>
+  <div class="grid term-grid">
+    <div class="card"><h3>調教</h3><p>VOCALOID 參數調整</p></div>
+    <div class="card"><h3>P主</h3><p>使用 Vocaloid 創作歌曲的製作人</p></div>
+    <div class="card"><h3>殿堂</h3><p>播放數超過 10 萬</p></div>
+    <div class="card"><h3>傳說</h3><p>播放數超過 100 萬</p></div>
+    <div class="card"><h3>神話</h3><p>播放數超過 1000 萬</p></div>
+  </div>
+</section>
+
+
+<!-- P主 -->
+<section id="p" class="page">
+  <h1>P主介紹</h1>
+
+  <div class="grid p-grid">
+
+    <div class="card">
+      <img src="neru.jpg" >
+      <h3>Neru（押入れP）</h3>
+      <p>PV多是自己的原創角色和故事設定
+Neru家 泛指出現於Neru作品裡的原創人物
+
+<br>常和456、しづ、りゅうせー PV繪師合作
+常用的Vocaloid為鏡音雙子</p>
+    </div>
+
+    <div class="card">
+      <img src="123.jpg" >
+      <h3>一二三</h3>
+      <p>擅長加入了三味線和日本箏的搖滾曲風
+<br>常和慧子、休符 PV繪師合作
+常用的Vocaloid有初音、音街鰻
+</p>
+    </div>
+
+    <div class="card">
+      <img src="giga.jpg" >
+      <h3>Giga(ギガP)
+</h3>
+      <p>電音風格強烈 很多工口、中毒性高的曲子
+目前共有12首傳說曲，是傳說曲數第五多的P主
+<br>跟れをる關係很好，常是作詞擔當
+常用的Vocaloid有鏡音雙子、GUMI
+</p>
+</div>
+
+    <div class="card">
+      <img src="kira.jpg" >
+      <h3>Kira</h3>
+      <p>來自德國的P主
+偶像是ギガP 2020年9月4日和ギガP合作原創曲GETCHA!
+<br>常和Ekkoberry PV繪師合作(幾乎所有歌曲
+常用的Vocaloid有GUMI
+</p>
+</div>
+
+    <div class="card">
+      <img src="aqu3ra.jpg">
+      <h3>Aqu3ra(あくえら)
+</h3>
+      <p>帶點夏日氣息、虛幻(?的電音曲風
+YT和推特都有另一個叫做Apu3ra的帳號
+<br>PV風格通常是藍色調 氣泡感的一圖
+常用的Vocaloid有初音、flower
+</p>
+</div>
+</section>
+
+</body>
+</html>
